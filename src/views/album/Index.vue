@@ -25,7 +25,9 @@ export default {
     getAllImage () {
       getListAPI('/api/siamese-file/image/images')
         .then(response => {
-          this.images = response.data.data
+          if (response) {
+            this.images = response.data.data
+          }
         })
     }
   }

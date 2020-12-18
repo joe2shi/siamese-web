@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const service = axios.create({
   baseURL: 'http://api.joe2shi.com',
-  timeout: 30000
+  timeout: 10000
 })
 service.interceptors.request.use(config => {
   config.headers = {
@@ -18,7 +18,8 @@ service.interceptors.response.use(response => {
     console.log(response.data.messages)
   }
 }, error => {
-  console.log(error)
-  return Promise.resolve(error.response)
+  if (error.code === 'ECONNABORTED') {
+    console.log('connect timeout')
+  }
 })
 export default service
