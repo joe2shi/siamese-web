@@ -15,7 +15,7 @@ service.interceptors.response.use(response => {
   if (response.data.code === 20000) {
     return response
   } else {
-    console.log(response.data.messages)
+    console.log(response.data.message)
   }
 }, error => {
   if (error.code === 'ECONNABORTED') {
