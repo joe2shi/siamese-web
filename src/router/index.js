@@ -17,7 +17,7 @@ const routes = [
         meta: {
           title: 'Dashboard'
         },
-        component: () => import('@/views/dashboard/Index.vue')
+        component: () => import('../views/dashboard/Index.vue')
       },
       {
         path: 'album',
@@ -25,7 +25,7 @@ const routes = [
         meta: {
           title: 'Album'
         },
-        component: () => import('@/views/album/Index.vue')
+        component: () => import('../views/album/Index.vue')
       }
     ]
   }
@@ -35,6 +35,13 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = `${to.meta.title} | Siamese`
+  }
+  next()
 })
 
 export default router
