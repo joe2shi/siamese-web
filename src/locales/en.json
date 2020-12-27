@@ -1,0 +1,14 @@
+{
+  "base": {
+    "Author": "Joe",
+    "motto": "As long as the heart is beating"
+  },
+  "menu": {
+    "Dashboard": "Dashboard",
+    "Repository": "Repository",
+    "Friends": "Friends",
+    "Album": "Album",
+    "Diary": "Diary",
+    "About": "About"
+  }
+}

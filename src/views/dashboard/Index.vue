@@ -1,5 +1,17 @@
 <template>
-  <v-card flat class="dashboard" height="1000" color="accent">
+  <v-card flat class="dashboard mt-2" height="1000" color="accent">
+    <v-row>
+      <v-col cols="8">
+        <v-card flat>
+          <v-card-title>
+            {{$t('Base.Author')}}
+          </v-card-title>
+          <v-card-subtitle>
+            {{$t('Base.motto')}}
+          </v-card-subtitle>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 
