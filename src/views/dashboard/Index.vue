@@ -6,7 +6,6 @@
           <v-card-title>
             {{$t('Base.Author')}}
           </v-card-title>
-          <snackbar/>
         </v-card>
       </v-col>
     </v-row>
@@ -14,12 +13,10 @@
 </template>
 
 <script>
-import Snackbar from '../../components/base/snackbar'
-
 export default {
   name: 'Dashboard',
-  components: {
-    Snackbar
+  created () {
+    this.$snackbar.success('Hello, Joe', 'success')
   }
 }
 </script>

@@ -5,11 +5,9 @@ import i18n from '../plugins/i18n'
 import '../sass/variables.scss'
 import '../sass/overrides.sass'
 
-Vue.use(Vuetify)
-
 const options = {
   theme: {
-    dark: false,
+    dark: true,
     lang: {
       t: (key, ...params) => i18n.t(key, params)
     },
@@ -37,5 +35,7 @@ const options = {
     }
   }
 }
+
+Vue.use(Vuetify)
 
 export default new Vuetify(options)
