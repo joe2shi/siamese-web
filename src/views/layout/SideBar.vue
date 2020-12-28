@@ -3,7 +3,7 @@
     <v-list>
       <v-list-item v-show="!miniVariant">
         <v-list-item-avatar class="mx-auto" width="80" height="80">
-          <v-img class="grey" src="http://file.joe2shi.com/image/M00/00/00/wKgBfF_YLFqACSOzAAF0bzqHPeM860.jpg"/>
+          <v-img class="grey" src="http://file.joe2shi.com/image/M00/00/00/wKgBfF_bNtOAIf4yAAIPMCPtLD8624.jpg"/>
         </v-list-item-avatar>
       </v-list-item>
       <v-list-item v-show="!miniVariant">
