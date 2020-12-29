@@ -1,7 +1,7 @@
 <template>
   <v-card flat tile class="layout" color="secondary">
-    <nav-bar :mini-variant="miniVariant"/>
-    <side-bar :username="username" :motto="motto" :drawer="drawer" :mini-variant="miniVariant"/>
+    <nav-bar/>
+    <side-bar :username="username" :motto="motto" :drawer="drawer"/>
     <v-main>
       <v-card flat class="ma-4 pa-4" color="accent">
         <breadcrumb/>
@@ -26,8 +26,7 @@ export default {
   data: () => ({
     username: 'Joe',
     motto: 'As long as the heart is beating',
-    drawer: true,
-    miniVariant: false
+    drawer: true
   })
 }
 </script>

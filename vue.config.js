@@ -1,6 +1,10 @@
 module.exports = {
   devServer: {
-    disableHostCheck: true
+    disableHostCheck: true,
+    port: 80,
+    host: '0.0.0.0',
+    https: false,
+    open: true
   },
   transpileDependencies: ['vuetify'],
   pluginOptions: {

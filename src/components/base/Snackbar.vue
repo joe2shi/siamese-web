@@ -21,6 +21,24 @@ export default {
     message: null,
     snackbar: false,
     color: null
-  })
+  }),
+  props: {
+    timeout: {
+      type: Number,
+      default: 3000
+    },
+    message: {
+      type: String,
+      default: null
+    },
+    snackbar: {
+      type: Boolean,
+      default: false
+    },
+    color: {
+      type: String,
+      default: null
+    }
+  }
 }
 </script>

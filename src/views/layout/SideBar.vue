@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer color="accent" v-model="drawer" persistent :mini-variant="miniVariant" app>
+  <v-navigation-drawer color="accent" persistent :mini-variant="miniVariant" app>
     <v-list>
       <v-list-item v-show="!miniVariant">
         <v-list-item-avatar class="mx-auto" width="80" height="80">
@@ -52,17 +52,10 @@ export default {
     motto: {
       type: String,
       default: null
-    },
-    drawer: {
-      type: Boolean,
-      default: true
-    },
-    miniVariant: {
-      type: Boolean,
-      default: false
     }
   },
   data: () => ({
+    miniVariant: false,
     items: [
       { text: 'Dashboard', icon: 'mdi-palette', path: '/dashboard' },
       { text: 'Github', icon: 'mdi-github' },

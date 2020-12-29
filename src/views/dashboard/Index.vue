@@ -1,7 +1,7 @@
 <template>
   <v-card flat class="dashboard mt-2" height="1000" color="accent">
     <v-row>
-      <v-col cols="8">
+      <v-col cols="6">
         <v-card flat>
           <v-card-title>
             {{$t('Base.Author')}}
@@ -16,7 +16,6 @@
 export default {
   name: 'Dashboard',
   created () {
-    this.$snackbar.success('Hello, Joe', 'success')
   }
 }
 </script>

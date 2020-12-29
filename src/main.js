@@ -4,9 +4,6 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import i18n from './plugins/i18n'
-import snackbar from './components/base'
-
-Vue.prototype.$snackbar = snackbar
 
 Vue.config.productionTip = false
 
