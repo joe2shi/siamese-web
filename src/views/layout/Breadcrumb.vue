@@ -1,6 +1,6 @@
 <template>
   <v-card flat>
-    <v-breadcrumbs class="py-2" :items="items"/>
+    <v-breadcrumbs v-show="items.length > 1" class="py-2 mb-4" :items="items"/>
   </v-card>
 </template>
 

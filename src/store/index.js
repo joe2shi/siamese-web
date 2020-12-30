@@ -6,20 +6,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    miniVariant: Cookies.get('miniVariant') || true
+    miniSidebar: Cookies.get('miniSidebar') || 'close',
+    theme: Cookies.get('miniSidebar') || 'light'
   },
   mutations: {
-    SWITCH_MINI_VARIANT: (state, miniVariant) => {
-      state.mini_variant = miniVariant
-      Cookies.set('miniVariant', miniVariant)
+    SWITCH_MINI_SIDEBAR: (state, miniSidebar) => {
+      state.miniSidebar = miniSidebar
+      Cookies.set('miniSidebar', miniSidebar)
+    },
+    SWITCH_THEME: (state, theme) => {
+      state.theme = theme
+      Cookies.set('theme', theme)
     }
   },
   actions: {
-    switchMiniVariant ({ commit }, miniVariant) {
-      commit('SWITCH_MINI_VARIANT', miniVariant)
+    switchMiniSidebar ({ commit }, miniSidebar) {
+      commit('SWITCH_MINI_SIDEBAR', miniSidebar)
+    },
+    switchTheme ({ commit }, theme) {
+      commit('SWITCH_THEME', theme)
     }
   },
   getters: {
-    miniVariant: state => state.miniVariant
+    miniSidebar: state => state.miniSidebar,
+    theme: state => state.theme
   }
 })

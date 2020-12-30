@@ -1,9 +1,9 @@
 <template>
-  <v-card flat class="dashboard mt-2" height="1000" color="accent">
+  <v-card flat class="dashboard" height="1000" color="accent">
     <v-row>
-      <v-col cols="6">
+      <v-col cols="6" class="pt-0">
         <v-card flat>
-          <v-card-title>
+          <v-card-title class="text-body-1">
             {{$t('Base.Author')}}
           </v-card-title>
         </v-card>
