@@ -3,6 +3,7 @@
     <v-app-bar-nav-icon @click="switchMiniSidebar"/>
     <v-toolbar-title class="text-body-1 text-uppercase" v-text="applicationName"/>
     <v-spacer/>
+    <internationalization/>
     <v-btn icon>
       <v-icon>mdi-github</v-icon>
     </v-btn>
@@ -13,18 +14,31 @@
 </template>
 
 <script>
+import Internationalization from './Internationalization'
 export default {
   name: 'NavBar',
+  components: { Internationalization },
   data: () => ({
     applicationName: 'Siamese'
   }),
+  created () {
+    this.$vuetify.theme.dark = this.theme !== 'light'
+  },
   methods: {
     switchMiniSidebar () {
-      this.$store.dispatch('switchMiniSidebar', this.$store.getters.miniSidebar === 'open' ? 'close' : 'open')
+      this.$store.dispatch('switchMiniSidebar', this.miniSidebar === 'open' ? 'close' : 'open')
     },
     switchTheme () {
-      this.$store.dispatch('switchTheme', this.$store.getters.theme === 'dark' ? 'light' : 'dark')
-      this.$vuetify.theme.dark = this.$store.getters.theme === 'dark'
+      this.$vuetify.theme.dark = this.theme === 'light'
+      this.$store.dispatch('switchTheme', this.theme === 'light' ? 'dark' : 'light')
+    }
+  },
+  computed: {
+    theme () {
+      return this.$store.getters.theme
+    },
+    miniSidebar () {
+      return this.$store.getters.miniSidebar
     }
   }
 }

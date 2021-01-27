@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     miniSidebar: Cookies.get('miniSidebar') || 'close',
-    theme: Cookies.get('miniSidebar') || 'light'
+    theme: Cookies.get('theme') || 'light',
+    language: Cookies.get('language') || 'zh'
   },
   mutations: {
     SWITCH_MINI_SIDEBAR: (state, miniSidebar) => {
@@ -17,6 +18,10 @@ export default new Vuex.Store({
     SWITCH_THEME: (state, theme) => {
       state.theme = theme
       Cookies.set('theme', theme)
+    },
+    SWITCH_LANGUAGE: (state, language) => {
+      state.language = language
+      Cookies.set('language', language)
     }
   },
   actions: {
@@ -25,10 +30,14 @@ export default new Vuex.Store({
     },
     switchTheme ({ commit }, theme) {
       commit('SWITCH_THEME', theme)
+    },
+    switchLanguage ({ commit }, language) {
+      commit('SWITCH_LANGUAGE', language)
     }
   },
   getters: {
     miniSidebar: state => state.miniSidebar,
-    theme: state => state.theme
+    theme: state => state.theme,
+    language: state => state.language
   }
 })

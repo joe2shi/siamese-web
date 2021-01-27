@@ -1,9 +1,9 @@
 {
-  "base": {
+  "Base": {
     "Author": "Joe",
     "motto": "As long as the heart is beating"
   },
-  "menu": {
+  "Menu": {
     "Dashboard": "Dashboard",
     "Repository": "Repository",
     "Friends": "Friends",

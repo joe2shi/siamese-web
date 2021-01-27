@@ -3,7 +3,7 @@
     <v-list>
       <v-list-item v-show="!miniVariant">
         <v-list-item-avatar class="mx-auto" width="80" height="80">
-          <v-img class="grey" src="http://file.joe2shi.com/image/M00/00/00/wKgBfF_bNtOAIf4yAAIPMCPtLD8624.jpg"/>
+          <v-img class="grey" src="http://file.joe2shi.com/image/M00/00/00/rBQKDF_sl-mAYb6WAADBBFahEyc229.jpg"/>
         </v-list-item-avatar>
       </v-list-item>
       <v-list-item v-show="!miniVariant">
@@ -15,7 +15,7 @@
       <v-list-item class="px-2" v-show="miniVariant">
         <v-list-item-avatar>
           <v-list-item-avatar class="mx-auto">
-            <v-img src="http://file.joe2shi.com/image/M00/00/00/wKgBfF_bNtOAIf4yAAIPMCPtLD8624.jpg"/>
+            <v-img src="http://file.joe2shi.com/image/M00/00/00/rBQKDF_sl-mAYb6WAADBBFahEyc229.jpg"/>
           </v-list-item-avatar>
         </v-list-item-avatar>
       </v-list-item>
@@ -56,7 +56,7 @@ export default {
   },
   data: () => ({
     miniVariant: null,
-    drawer: true,
+    drawer: null,
     items: [
       { text: 'Dashboard', icon: 'mdi-palette', path: '/dashboard' },
       { text: 'Repository', icon: 'mdi-github' },
