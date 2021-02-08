@@ -1,7 +1,7 @@
 <template>
   <v-app-bar flat fixed app color="accent">
     <v-app-bar-nav-icon @click="switchMiniSidebar"/>
-    <v-toolbar-title class="text-body-1 text-uppercase" v-text="applicationName"/>
+    <v-toolbar-title v-text="applicationName"/>
     <v-spacer/>
     <internationalization/>
     <v-btn icon>

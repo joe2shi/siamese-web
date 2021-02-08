@@ -3,19 +3,19 @@
     <v-list>
       <v-list-item v-show="!miniVariant">
         <v-list-item-avatar class="mx-auto" width="80" height="80">
-          <v-img class="grey" src="http://file.joe2shi.com/image/M00/00/00/rBQKDF_sl-mAYb6WAADBBFahEyc229.jpg"/>
+          <v-img class="grey" :src="avatar"/>
         </v-list-item-avatar>
       </v-list-item>
       <v-list-item v-show="!miniVariant">
         <v-list-item-content>
-          <v-list-item-title class="text-center" v-text="username"/>
+          <v-list-item-title class="text-center text-body-1 font-weight-medium" v-text="username"/>
           <v-list-item-title class="text-center text-caption grey--text" v-text="motto"/>
         </v-list-item-content>
       </v-list-item>
       <v-list-item class="px-2" v-show="miniVariant">
         <v-list-item-avatar>
           <v-list-item-avatar class="mx-auto">
-            <v-img src="http://file.joe2shi.com/image/M00/00/00/rBQKDF_sl-mAYb6WAADBBFahEyc229.jpg"/>
+            <v-img :src="avatar"/>
           </v-list-item-avatar>
         </v-list-item-avatar>
       </v-list-item>
@@ -57,6 +57,7 @@ export default {
   data: () => ({
     miniVariant: null,
     drawer: null,
+    avatar: 'http://file.joe2shi.com/image/M00/00/00/wKgBfGAguGOAdf9wAAF0bzqHPeM888.jpg',
     items: [
       { text: 'Dashboard', icon: 'mdi-palette', path: '/dashboard' },
       { text: 'Repository', icon: 'mdi-github' },

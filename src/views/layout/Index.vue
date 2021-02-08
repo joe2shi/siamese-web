@@ -25,7 +25,7 @@ export default {
   },
   data: () => ({
     username: 'Joe',
-    motto: 'As long as the heart is beating',
+    motto: 'As long as the heart is beating.',
     drawer: true
   })
 }

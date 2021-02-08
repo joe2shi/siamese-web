@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     getAllImage () {
-      getListAPI('/api/siamese-file/image/images')
+      getListAPI('/api/siamese-file-interface/image/items')
         .then(response => {
           if (response) {
             this.images = response.data.data

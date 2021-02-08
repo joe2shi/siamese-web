@@ -1,11 +1,8 @@
 <template>
   <v-card flat class="dashboard" height="1000" color="accent">
     <v-row>
-      <v-col cols="6" class="pt-0">
+      <v-col cols="12"  class="pt-0">
         <v-card flat>
-          <v-card-title class="text-body-1">
-            {{$t('Base.Author')}}
-          </v-card-title>
         </v-card>
       </v-col>
     </v-row>
@@ -15,6 +12,7 @@
 <script>
 export default {
   name: 'Dashboard',
+  data: () => ({}),
   created () {
   }
 }
