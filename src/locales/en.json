@@ -1,7 +1,6 @@
 {
   "Base": {
-    "Author": "Joe",
-    "motto": "As long as the heart is beating"
+    "ApplicationName": "Siamese"
   },
   "Menu": {
     "Dashboard": "Dashboard",
@@ -10,5 +9,11 @@
     "Album": "Album",
     "Diary": "Diary",
     "About": "About"
+  },
+  "Page": {
+    "SignIn": {
+      "ApplicationName": "Siamese",
+      "SignInTip": "Welcome to sign in siamese の cabin"
+    }
   }
 }

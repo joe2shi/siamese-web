@@ -1,14 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '../views/layout/Index.vue'
+import SignInLayout from '../views/signin/Index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    name: 'SignInLayout',
+    component: SignInLayout,
+    redirect: '/signin',
+    children: [
+      {
+        path: 'signin',
+        name: 'SignIn',
+        meta: {
+          title: 'SignIn'
+        },
+        component: () => import('../views/signin/SignIn.vue')
+      }
+    ]
+  },
+  {
+    path: '/',
     name: 'Layout',
-    redirect: '/dashboard',
     component: Layout,
     children: [
       {
@@ -39,7 +55,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
-    document.title = `${to.meta.title} | Siamese`
+    document.title = `Siamese / ${to.meta.title}`
   }
   next()
 })

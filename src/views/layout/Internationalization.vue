@@ -2,7 +2,7 @@
   <v-menu offset-y transition="slide-y-transition" fixed>
     <template v-slot:activator="{on, attrs}">
       <v-btn depressed v-bind="attrs" v-on="on"
-        class="text-caption" text>
+        class="text-caption text-none" text>
         <v-icon small left>mdi-translate</v-icon>
         {{ language === 'zh' ? '简体中文' : 'English' }}
       </v-btn>

@@ -29,11 +29,11 @@
               <template v-slot:activator="{ on, attrs }">
                 <v-icon v-text="item.icon" class="px-1" v-bind="attrs" v-on="on" small/>
               </template>
-              <span class="text-caption" v-text="item.text"/>
+              <span v-text="$t(item.text)"/>
             </v-tooltip>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="text-caption font-weight-regular" v-text="item.text"/>
+            <v-list-item-title class="font-weight-regular" v-text="$t(item.text)"/>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -58,13 +58,14 @@ export default {
     miniVariant: null,
     drawer: null,
     avatar: 'http://file.joe2shi.com/image/M00/00/00/wKgBfGAguGOAdf9wAAF0bzqHPeM888.jpg',
+    prefixMenu: 'Menu',
     items: [
-      { text: 'Dashboard', icon: 'mdi-palette', path: '/dashboard' },
-      { text: 'Repository', icon: 'mdi-github' },
-      { text: 'Friends', icon: 'mdi-account' },
-      { text: 'Album', icon: 'mdi-image', path: '/album' },
-      { text: 'Diary', icon: 'mdi-notebook' },
-      { text: 'About', icon: 'mdi-information' }
+      { text: 'Menu.Dashboard', icon: 'mdi-palette', path: '/dashboard' },
+      { text: 'Menu.Repository', icon: 'mdi-github' },
+      { text: 'Menu.Friends', icon: 'mdi-account' },
+      { text: 'Menu.Album', icon: 'mdi-image', path: '/album' },
+      { text: 'Menu.Diary', icon: 'mdi-notebook' },
+      { text: 'Menu.About', icon: 'mdi-information' }
     ]
   }),
   created () {

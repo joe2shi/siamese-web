@@ -1,7 +1,6 @@
 {
   "Base": {
-    "Author": "Joe",
-    "motto": "只要心还跳"
+    "ApplicationName": "Siamese"
   },
   "Menu": {
     "Dashboard": "首页",
@@ -10,5 +9,11 @@
     "Album": "相册",
     "Diary": "日记",
     "About": "关于"
+  },
+  "Page": {
+    "SignIn": {
+      "ApplicationName": "Siamese",
+      "SignInTip": "欢迎登录暹罗の小屋"
+    }
   }
 }

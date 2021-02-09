@@ -1,7 +1,7 @@
 <template>
   <v-app-bar flat fixed app color="accent">
     <v-app-bar-nav-icon @click="switchMiniSidebar"/>
-    <v-toolbar-title v-text="applicationName"/>
+    <v-toolbar-title class="text-body-1 font-weight-medium" v-text="$t('Base.ApplicationName')"/>
     <v-spacer/>
     <internationalization/>
     <v-btn icon>
@@ -15,12 +15,10 @@
 
 <script>
 import Internationalization from './Internationalization'
+
 export default {
   name: 'NavBar',
   components: { Internationalization },
-  data: () => ({
-    applicationName: 'Siamese'
-  }),
   created () {
     this.$vuetify.theme.dark = this.theme !== 'light'
   },
