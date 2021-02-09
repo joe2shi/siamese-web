@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '../views/layout/Index.vue'
-import SignInLayout from '../views/signin/Index.vue'
+import SignInLayout from '../views/auth/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -18,7 +18,7 @@ const routes = [
         meta: {
           title: 'SignIn'
         },
-        component: () => import('../views/signin/SignIn.vue')
+        component: () => import('../views/auth/SignIn.vue')
       }
     ]
   },

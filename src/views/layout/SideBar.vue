@@ -8,7 +8,7 @@
       </v-list-item>
       <v-list-item v-show="!miniVariant">
         <v-list-item-content>
-          <v-list-item-title class="text-center text-body-1 font-weight-medium" v-text="username"/>
+          <v-list-item-title class="text-center text-body-1 font-weight-regular" v-text="username"/>
           <v-list-item-title class="text-center text-caption grey--text" v-text="motto"/>
         </v-list-item-content>
       </v-list-item>
