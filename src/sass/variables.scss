@@ -1,1 +1,8 @@
+$body-font-family: 'Quicksand', sans-serif;
+$heading-font-family: 'Quicksand', sans-serif;
+
 @import "~vuetify/src/styles/main";
+
+.vertical-align-middle {
+  vertical-align: middle
+}

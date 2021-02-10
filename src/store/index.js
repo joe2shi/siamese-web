@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     miniSidebar: Cookies.get('miniSidebar') || 'close',
     theme: Cookies.get('theme') || 'light',
-    language: Cookies.get('language') || 'zh'
+    language: Cookies.get('language') || 'zh',
+    loading: false
   },
   mutations: {
     SWITCH_MINI_SIDEBAR: (state, miniSidebar) => {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     SWITCH_LANGUAGE: (state, language) => {
       state.language = language
       Cookies.set('language', language)
+    },
+    SWITCH_LOADING: (state, loading) => {
+      state.loading = loading
     }
   },
   actions: {
@@ -33,11 +37,15 @@ export default new Vuex.Store({
     },
     switchLanguage ({ commit }, language) {
       commit('SWITCH_LANGUAGE', language)
+    },
+    switchLoading ({ commit }, loading) {
+      commit('SWITCH_LOADING', loading)
     }
   },
   getters: {
     miniSidebar: state => state.miniSidebar,
     theme: state => state.theme,
-    language: state => state.language
+    language: state => state.language,
+    loading: state => state.loading
   }
 })

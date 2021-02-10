@@ -1,10 +1,12 @@
 <template>
   <v-menu offset-y transition="slide-y-transition" fixed>
     <template v-slot:activator="{on, attrs}">
-      <v-btn depressed v-bind="attrs" v-on="on"
-        class="text-caption text-none" text>
+      <v-btn depressed v-bind="attrs" v-on="on" class="text-caption text-none hidden-xs-only" text>
         <v-icon small left>mdi-translate</v-icon>
         {{ language === 'zh' ? '简体中文' : 'English' }}
+      </v-btn>
+      <v-btn depressed v-bind="attrs" v-on="on" class="text-caption text-none hidden-sm-and-up" text>
+        <v-icon small>mdi-translate</v-icon>
       </v-btn>
     </template>
     <v-list dense nav>
@@ -18,14 +20,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data: () => ({
     languages: ['zh', 'en']
   }),
   computed: {
-    language () {
-      return this.$store.getters.language
-    }
+    ...mapState(['language'])
   },
   methods: {
     switchLanguage (language) {
