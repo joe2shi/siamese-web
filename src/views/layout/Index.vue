@@ -1,5 +1,4 @@
 <template>
-
   <v-card flat tile class="layout" color="secondary">
     <loading :loading="loading"/>
     <v-app-bar flat app clipped-left clipped-right color="accent" elevation="1">
@@ -52,17 +51,17 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <v-card flat tile color="accent">
-        <v-card-title class="mx-auto mb-4" v-text="content.title"/>
-        <v-card-subtitle class="text-caption mx-auto">
-          <v-icon small class="mr-2" v-text="'mdi-account-outline'"/>
-          <span class="mr-3 vertical-align-middle" v-text="content.author"/>
-          <v-icon small class="mr-2" v-text="'mdi-clock-time-four-outline'"/>
-          <span class="mr-3 vertical-align-middle" v-text="content.updateTime"/>
-          <v-icon small class="mr-2" v-text="'mdi-tag-multiple-outline'"/>
-          <span class="mr-3 vertical-align-middle" v-text="content.tag"/>
-        </v-card-subtitle>
-      </v-card>
+<!--      <v-card flat tile color="accent">-->
+<!--        <v-card-title class="mb-4" v-text="content.title"/>-->
+<!--        <v-card-subtitle class="text-caption">-->
+<!--          <v-icon small class="mr-2" v-text="'mdi-account-outline'"/>-->
+<!--          <span class="mr-3 vertical-align-middle" v-text="content.author"/>-->
+<!--          <v-icon small class="mr-2" v-text="'mdi-clock-time-four-outline'"/>-->
+<!--          <span class="mr-3 vertical-align-middle" v-text="content.updateTime"/>-->
+<!--          <v-icon small class="mr-2" v-text="'mdi-tag-multiple-outline'"/>-->
+<!--          <span class="mr-3 vertical-align-middle" v-text="content.tag"/>-->
+<!--        </v-card-subtitle>-->
+<!--      </v-card>-->
       <v-card flat class="ma-4" color="accent">
         <breadcrumb/>
         <router-view/>

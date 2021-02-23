@@ -26,6 +26,9 @@ export default {
   data: () => ({
     languages: ['zh', 'en']
   }),
+  created () {
+    this.switchLanguage(this.language)
+  },
   computed: {
     ...mapState(['language'])
   },
