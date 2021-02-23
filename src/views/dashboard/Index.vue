@@ -6,7 +6,7 @@
           <v-card-title>Siamese Overview</v-card-title>
           <v-divider class="pa-4"/>
           <div v-if="chart">
-            <apexchart :options="options" :series="series" height="320"/>
+            <apexchart ref="overviewChart" :options="options" :series="series" height="320"/>
           </div>
         </v-card>
       </v-col>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
@@ -23,6 +25,11 @@ export default {
         chart: {
           id: 'line',
           type: 'line',
+          foreColor: '',
+          fontFamily: 'inherit',
+          animations: {
+            easing: 'easein'
+          },
           toolbar: {
             show: false,
             tools: {
@@ -39,8 +46,7 @@ export default {
         },
         tooltip: {
           style: {
-            fontSize: '12px',
-            fontFamily: 'inherit'
+            fontSize: '12px'
           }
         },
         stroke: {
@@ -48,14 +54,12 @@ export default {
           width: 3
         },
         legend: {
-          position: 'top',
-          fontFamily: 'inherit'
+          position: 'top'
         },
         xaxis: {
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
           labels: {
             style: {
-              fontFamily: 'inherit',
               fontSize: '12px'
             }
           }
@@ -63,7 +67,6 @@ export default {
         yaxis: {
           labels: {
             style: {
-              fontFamily: 'inherit',
               fontSize: '12px'
             }
           }
@@ -82,32 +85,20 @@ export default {
           name: 'Avg',
           data: [150, 127, 100, 89, 95, 80, 64, 65, 50, 30, 12, 1]
         }
-      ],
-      chartOptions: {
-        chart: {
-          height: 350,
-          type: 'area'
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth'
-        },
-        xaxis: {
-          type: 'datetime',
-          categories: ['2018-09-19T00:00:00.000Z', '2018-09-19T01:30:00.000Z', '2018-09-19T02:30:00.000Z', '2018-09-19T03:30:00.000Z', '2018-09-19T04:30:00.000Z', '2018-09-19T05:30:00.000Z', '2018-09-19T06:30:00.000Z']
-        },
-        tooltip: {
-          x: {
-            format: 'dd/MM/yy HH:mm'
-          }
-        }
-      }
+      ]
     }
   },
   mounted () {
-    this.chart = true
+    this.init()
+  },
+  methods: {
+    init: function () {
+      this.chart = true
+      this.options.chart.foreColor = !this.$vuetify.theme.dark ? '' : '#BDBDBD'
+    }
+  },
+  computed: {
+    ...mapState(['theme'])
   }
 }
 </script>
