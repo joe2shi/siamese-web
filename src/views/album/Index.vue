@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="dashboard" color="accent">
+  <v-card flat class="dashboard" color="accent" height="10000">
     <v-row>
       <v-col v-for="(image, index) in images" :key="index" cols="4">
         <v-card>

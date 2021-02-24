@@ -1,12 +1,12 @@
 <template>
-  <v-card flat class="dashboard" height="1000" color="accent">
+  <v-card flat class="dashboard" height="10000" color="accent">
     <v-row>
       <v-col cols="12">
         <v-card flat>
           <v-card-title>Siamese Overview</v-card-title>
           <v-divider class="pa-4"/>
           <div v-if="chart">
-            <apexchart ref="overviewChart" :options="options" :series="series" height="320"/>
+            <apexchart type="line" :options="lineOptions" :series="lineSeries" height="320"/>
           </div>
         </v-card>
       </v-col>
@@ -21,10 +21,9 @@ export default {
   data () {
     return {
       chart: false,
-      options: {},
-      lightOptions: {
+      lineOptions: {},
+      lightLineOptions: {
         chart: {
-          type: 'line',
           fontFamily: 'inherit',
           foreColor: '',
           animations: {
@@ -73,9 +72,8 @@ export default {
           }
         }
       },
-      darkOptions: {
+      darkLineOptions: {
         chart: {
-          type: 'line',
           fontFamily: 'inherit',
           foreColor: '#BDBDBD',
           animations: {
@@ -124,7 +122,7 @@ export default {
           }
         }
       },
-      series: [
+      lineSeries: [
         {
           name: 'Count',
           data: [55, 62, 120, 66, 98, 72, 101, 75, 94, 120, 117, 139]
@@ -146,8 +144,8 @@ export default {
   },
   methods: {
     switchChartsTheme: function () {
-      if (this.$vuetify.theme.dark) this.options = this.darkOptions
-      else this.options = this.lightOptions
+      if (this.$vuetify.theme.dark) this.lineOptions = this.darkLineOptions
+      else this.lineOptions = this.lightLineOptions
     }
   },
   watch: {
