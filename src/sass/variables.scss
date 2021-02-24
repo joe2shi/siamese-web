@@ -4,7 +4,7 @@ $heading-font-family: 'Quicksand', sans-serif;
 @import "~vuetify/src/styles/main";
 
 .vertical-align-middle {
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 /* global scroll bar (safari) */
@@ -16,7 +16,7 @@ $heading-font-family: 'Quicksand', sans-serif;
 }
 
 ::-webkit-scrollbar-button {
-  height: 0px;
+  height: 0;
 }
 
 ::-webkit-scrollbar-thumb {

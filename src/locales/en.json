@@ -1,6 +1,6 @@
 {
   "Base": {
-    "ApplicationName": "Siamese"
+    "ApplicationName": "Siamese Admin"
   },
   "Menu": {
     "Dashboard": "Dashboard",
@@ -9,11 +9,5 @@
     "Album": "Album",
     "Diary": "Diary",
     "About": "About"
-  },
-  "Page": {
-    "SignIn": {
-      "ApplicationName": "Siamese",
-      "SignInTip": "Welcome to sign in siamese の cabin"
-    }
   }
 }

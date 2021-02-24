@@ -3,6 +3,7 @@
     <v-row>
       <v-col cols="12">
         <v-card flat>
+          <tick/>
           <v-card-title>Siamese Overview</v-card-title>
           <v-divider class="pa-4"/>
           <div v-if="chart">
@@ -16,6 +17,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import Tick from '../../components/Tick'
 
 export default {
   data () {
@@ -138,6 +140,7 @@ export default {
       ]
     }
   },
+  components: { Tick },
   mounted () {
     this.chart = true
     this.switchChartsTheme()
