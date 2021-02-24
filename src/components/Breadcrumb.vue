@@ -38,6 +38,7 @@ export default {
           )
         }
       }
+      document.title = `${this.$t('Base.ApplicationName')} / ${this.items[this.items.length - 1].text}`
     }
   },
   computed: {

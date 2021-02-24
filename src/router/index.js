@@ -63,11 +63,4 @@ const router = new VueRouter({
   }
 })
 
-router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
-    document.title = `Siamese / ${to.meta.title}`
-  }
-  next()
-})
-
 export default router
