@@ -59,7 +59,7 @@ const router = new VueRouter({
     } else if (savedPosition) {
       scrollTo = savedPosition.y
     }
-    return goTo(scrollTo, { duration: 1200 })
+    return goTo(scrollTo, { duration: 1000 })
   }
 })
 
