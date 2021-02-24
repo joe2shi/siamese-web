@@ -22,7 +22,7 @@ export default {
     this.getAllImage()
   },
   methods: {
-    getAllImage () {
+    getAllImage: function () {
       getListAPI('/api/siamese-file-interface/image/items')
         .then(response => {
           if (response) {

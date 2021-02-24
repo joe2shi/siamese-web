@@ -9,6 +9,9 @@
       <v-btn icon class="hidden-sm-and-down" target="_blank" :href="github">
         <v-icon>mdi-github</v-icon>
       </v-btn>
+      <v-btn icon @click="switchTheme">
+        <v-icon>mdi-invert-colors</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-navigation-drawer color="accent" :mini-variant="miniVariant" v-model="drawer" floating clipped app>
       <v-list>
@@ -85,6 +88,10 @@ export default {
     Breadcrumb,
     Internationalization
   },
+  created () {
+    this.$vuetify.theme.dark = this.theme !== 'light'
+    this.$vuetify.theme.dark ? document.body.style.backgroundColor = '#191919' : document.body.style.backgroundColor = '#f1f3f4'
+  },
   data: () => ({
     drawer: null,
     miniVariant: false,
@@ -102,15 +109,23 @@ export default {
       { text: 'Menu.About', icon: 'mdi-information' }
     ],
     content: {
-      title: '细谈 JavaScript 与 TypeScript 的区别',
+      title: 'JavaScript 与 TypeScript 的区别',
       author: 'Joe',
       tag: 'JavaScript',
       url: '',
       updateTime: '2021.02.10'
     }
   }),
+  methods: {
+    switchTheme () {
+      this.$vuetify.theme.dark = this.theme === 'light'
+      this.$vuetify.theme.dark ? document.body.style.backgroundColor = '#191919' : document.body.style.backgroundColor = '#f1f3f4'
+      this.$store.dispatch('switchTheme', this.theme === 'light' ? 'dark' : 'light')
+    }
+  },
   computed: {
-    ...mapState(['loading'])
+    ...mapState(['loading']),
+    ...mapState(['theme'])
   }
 }
 </script>

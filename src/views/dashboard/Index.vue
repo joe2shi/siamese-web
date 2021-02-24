@@ -21,12 +21,12 @@ export default {
   data () {
     return {
       chart: false,
-      options: {
+      options: {},
+      lightOptions: {
         chart: {
-          id: 'line',
           type: 'line',
-          foreColor: '',
           fontFamily: 'inherit',
+          foreColor: '',
           animations: {
             easing: 'easein'
           },
@@ -47,7 +47,59 @@ export default {
         tooltip: {
           style: {
             fontSize: '12px'
+          },
+          theme: 'light'
+        },
+        stroke: {
+          curve: 'smooth',
+          width: 3
+        },
+        legend: {
+          position: 'top'
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          labels: {
+            style: {
+              fontSize: '12px'
+            }
           }
+        },
+        yaxis: {
+          labels: {
+            style: {
+              fontSize: '12px'
+            }
+          }
+        }
+      },
+      darkOptions: {
+        chart: {
+          type: 'line',
+          fontFamily: 'inherit',
+          foreColor: '#BDBDBD',
+          animations: {
+            easing: 'easein'
+          },
+          toolbar: {
+            show: false,
+            tools: {
+              download: false,
+              selection: false,
+              zoom: false,
+              zoomin: false,
+              zoomout: false,
+              pan: false,
+              reset: false,
+              customIcons: []
+            }
+          }
+        },
+        tooltip: {
+          style: {
+            fontSize: '12px'
+          },
+          theme: 'dark'
         },
         stroke: {
           curve: 'smooth',
@@ -89,12 +141,18 @@ export default {
     }
   },
   mounted () {
-    this.init()
+    this.chart = true
+    this.switchChartsTheme()
   },
   methods: {
-    init: function () {
-      this.chart = true
-      this.options.chart.foreColor = !this.$vuetify.theme.dark ? '' : '#BDBDBD'
+    switchChartsTheme: function () {
+      if (this.$vuetify.theme.dark) this.options = this.darkOptions
+      else this.options = this.lightOptions
+    }
+  },
+  watch: {
+    theme () {
+      this.switchChartsTheme()
     }
   },
   computed: {
