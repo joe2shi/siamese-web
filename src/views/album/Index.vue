@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { getListAPI } from '../../api/index'
 
 export default {
@@ -22,6 +23,7 @@ export default {
     this.getAllImage()
   },
   methods: {
+    ...mapActions(['showSnackbar']),
     getAllImage: function () {
       getListAPI('/api/siamese-file-interface/image/items')
         .then(response => {

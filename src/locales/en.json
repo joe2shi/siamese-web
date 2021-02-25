@@ -9,5 +9,11 @@
     "Album": "Album",
     "Diary": "Diary",
     "About": "About"
+  },
+  "Common": {
+    "Close": "Close"
+  },
+  "Tip": {
+    "ConnectTimeout": "Connect Timeout"
   }
 }

@@ -9,5 +9,11 @@
     "Album": "相册",
     "Diary": "日记",
     "About": "关于"
+  },
+  "Common": {
+    "Close": "关闭"
+  },
+  "Tip": {
+    "ConnectTimeout": "连接超时"
   }
 }

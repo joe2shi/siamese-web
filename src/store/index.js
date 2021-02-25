@@ -9,7 +9,9 @@ export default new Vuex.Store({
     miniSidebar: Cookies.get('miniSidebar') || 'close',
     theme: Cookies.get('theme') || 'light',
     language: Cookies.get('language') || 'zh',
-    loading: false
+    loading: false,
+    message: '',
+    color: ''
   },
   mutations: {
     SWITCH_MINI_SIDEBAR: (state, miniSidebar) => {
@@ -26,6 +28,10 @@ export default new Vuex.Store({
     },
     SWITCH_LOADING: (state, loading) => {
       state.loading = loading
+    },
+    SHOW_SNACKBAR: (state, payload) => {
+      state.message = payload.message
+      state.color = payload.color
     }
   },
   actions: {
@@ -40,12 +46,17 @@ export default new Vuex.Store({
     },
     switchLoading ({ commit }, loading) {
       commit('SWITCH_LOADING', loading)
+    },
+    showSnackbar ({ commit }, payload) {
+      commit('SHOW_SNACKBAR', payload)
     }
   },
   getters: {
     miniSidebar: state => state.miniSidebar,
     theme: state => state.theme,
     language: state => state.language,
-    loading: state => state.loading
+    loading: state => state.loading,
+    text: state => state.message,
+    color: state => state.color
   }
 })

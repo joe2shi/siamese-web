@@ -1,6 +1,7 @@
 <template>
   <v-card flat tile class="layout" color="secondary">
     <loading :loading="loading"/>
+    <snackbar/>
     <v-app-bar flat app clipped-left clipped-right color="accent" elevation="1">
       <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-lg-and-up"/>
       <v-toolbar-title class="text-subtitle-1 font-weight-medium" v-text="$t('Base.ApplicationName')"/>
@@ -77,6 +78,7 @@
 
 <script>
 import Loading from '../../components/Loading'
+import Snackbar from '../../components/Snackbar'
 import Breadcrumb from '../../components/Breadcrumb'
 import Internationalization from '../../components/Internationalization'
 import { mapState } from 'vuex'
@@ -85,6 +87,7 @@ export default {
   name: 'Layout',
   components: {
     Loading,
+    Snackbar,
     Breadcrumb,
     Internationalization
   },

@@ -8,10 +8,12 @@ import './plugins/apexcharts'
 
 Vue.config.productionTip = false
 
-new Vue({
+const vue = new Vue({
   router,
   store,
   vuetify,
   i18n,
   render: h => h(App)
 }).$mount('#app')
+
+export default vue
