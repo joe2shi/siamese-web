@@ -10,7 +10,7 @@
     top>
     {{ message }}
     <template v-slot:action="{ attrs }">
-      <v-btn class="text-none font-weight-light" text v-bind="attrs" @click="show = false">
+      <v-btn class="text-none text-body-2" text v-bind="attrs" @click="show = false">
         {{ $t('Common.Close') }}
       </v-btn>
     </template>
