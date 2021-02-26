@@ -6,9 +6,9 @@
     elevation="1"
     app right top>
     <div class="v-alert__border v-alert__border--left"/>
-    <v-icon v-show="icon" class="ml-2 mr-4">{{ icon }}</v-icon>
-    <span class="align-middle">{{ message }}</span>
-    <v-btn class="text-none ml-4" text small @click="show = false">
+    <v-icon v-show="icon" small class="ml-2 mr-4">{{ icon }}</v-icon>
+    <span class="align-middle text-caption">{{ message }}</span>
+    <v-btn class="text-none ml-2 text-caption" small text @click="show = false">
       {{ $t('Common.Close') }}
     </v-btn>
   </v-snackbar>
