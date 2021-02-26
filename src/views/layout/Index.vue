@@ -86,7 +86,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      this.showSnackbar({ message: this.$t('Tip.Welcome'), color: 'green' })
+      this.showSnackbar({ message: this.$t('Tip.Welcome'), color: 'success' })
     })
   },
   data: () => ({
