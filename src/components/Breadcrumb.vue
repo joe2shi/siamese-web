@@ -1,7 +1,6 @@
 <template>
   <v-card flat>
     <v-breadcrumbs class="text-caption py-2" :items="items"/>
-<!--    <v-img max-height="321" src="http://file.joe2shi.com/image/M00/00/00/wKgBfGAjtoGATRY-AAF3z5W_Bng904.jpg"/>-->
   </v-card>
 </template>
 

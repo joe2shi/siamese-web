@@ -3,12 +3,14 @@
     v-model="show"
     :color="color"
     :timeout="timeout"
-    :elevation="1"
-    top
-    right>
+    elevation="1"
+    text
+    app
+    right
+    top>
     {{ message }}
     <template v-slot:action="{ attrs }">
-      <v-btn class="text-none" dark text v-bind="attrs" @click="show = false">
+      <v-btn class="text-none font-weight-light" text v-bind="attrs" @click="show = false">
         {{ $t('Common.Close') }}
       </v-btn>
     </template>

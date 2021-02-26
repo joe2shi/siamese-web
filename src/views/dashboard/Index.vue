@@ -142,6 +142,10 @@ export default {
   mounted () {
     this.chart = true
     this.switchChartsTheme()
+    this.showSnackbar({
+      message: 'Successfully Saved!',
+      color: 'success'
+    })
   },
   methods: {
     switchChartsTheme: function () {
