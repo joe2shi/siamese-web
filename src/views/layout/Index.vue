@@ -24,7 +24,7 @@
         <v-list-item v-show="!miniVariant">
           <v-list-item-content>
             <v-list-item-title class="text-center text-body-1 font-weight-medium" v-text="username"/>
-            <v-list-item-title class="text-center text-caption" v-text="motto"/>
+            <v-list-item-subtitle class="text-center text-caption" v-text="motto"/>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="px-2" v-show="miniVariant">
