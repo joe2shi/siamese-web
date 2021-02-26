@@ -3,6 +3,10 @@ $heading-font-family: 'Quicksand',"Microsoft Jhenghei","Microsoft Yahei",sans-se
 
 @import "~vuetify/src/styles/main";
 
+.align-middle {
+  vertical-align: middle;
+}
+
 /* global scroll bar (safari) */
 ::-webkit-scrollbar {
   background-color: transparent;

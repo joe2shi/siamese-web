@@ -11,7 +11,8 @@ export default new Vuex.Store({
     language: Cookies.get('language') || 'zh',
     loading: false,
     message: '',
-    color: ''
+    color: '',
+    icon: ''
   },
   mutations: {
     SWITCH_MINI_SIDEBAR: (state, miniSidebar) => {
@@ -30,8 +31,23 @@ export default new Vuex.Store({
       state.loading = loading
     },
     SHOW_SNACKBAR: (state, payload) => {
+      switch (payload.color) {
+        case 'success':
+          payload.icon = 'mdi-check-circle'
+          break
+        case 'warning':
+          payload.icon = 'mdi-alert-outline'
+          break
+        case 'error':
+          payload.icon = 'mdi-alert-octagon-outline'
+          break
+        case 'info':
+          payload.icon = 'mdi-alert-circle-outline'
+          break
+      }
       state.message = payload.message
       state.color = payload.color
+      state.icon = payload.icon
     }
   },
   actions: {
@@ -57,6 +73,7 @@ export default new Vuex.Store({
     language: state => state.language,
     loading: state => state.loading,
     text: state => state.message,
-    color: state => state.color
+    color: state => state.color,
+    icon: state => state.icon
   }
 })
