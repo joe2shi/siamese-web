@@ -14,6 +14,7 @@
     "Close": "Close"
   },
   "Tip": {
-    "ConnectTimeout": "Connect Timeout"
+    "ConnectTimeout": "Connect Timeout",
+    "Welcome": "Welcome to siamese admin, page loaded!"
   }
 }

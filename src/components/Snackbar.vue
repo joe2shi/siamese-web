@@ -8,11 +8,9 @@
     <div class="v-alert__border v-alert__border--left"/>
     <v-icon v-show="icon" class="ml-2 mr-4">{{ icon }}</v-icon>
     <span class="align-middle">{{ message }}</span>
-    <template v-slot:action="{ attrs }">
-      <v-btn class="text-none" text v-bind="attrs" @click="show = false">
-        {{ $t('Common.Close') }}
-      </v-btn>
-    </template>
+    <v-btn class="text-none ml-4" text small @click="show = false">
+      {{ $t('Common.Close') }}
+    </v-btn>
   </v-snackbar>
 </template>
 

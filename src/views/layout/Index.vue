@@ -70,7 +70,7 @@ import Loading from '../../components/Loading'
 import Snackbar from '../../components/Snackbar'
 import Breadcrumb from '../../components/Breadcrumb'
 import Internationalization from '../../components/Internationalization'
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Layout',
@@ -83,6 +83,11 @@ export default {
   created () {
     this.$vuetify.theme.dark = this.theme !== 'light'
     this.$vuetify.theme.dark ? document.body.style.backgroundColor = '#191919' : document.body.style.backgroundColor = '#f1f3f4'
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.showSnackbar({ message: this.$t('Tip.Welcome'), color: 'green' })
+    })
   },
   data: () => ({
     drawer: null,
@@ -109,6 +114,7 @@ export default {
     }
   }),
   methods: {
+    ...mapActions(['showSnackbar']),
     switchTheme () {
       this.$vuetify.theme.dark = this.theme === 'light'
       this.$vuetify.theme.dark ? document.body.style.backgroundColor = '#191919' : document.body.style.backgroundColor = '#f1f3f4'

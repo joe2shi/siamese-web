@@ -14,6 +14,7 @@
     "Close": "关闭"
   },
   "Tip": {
-    "ConnectTimeout": "连接超时"
+    "ConnectTimeout": "连接超时",
+    "Welcome": "欢迎来到 Siamese Admin，页面已加载完毕！"
   }
 }
