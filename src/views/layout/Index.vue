@@ -4,13 +4,25 @@
     <snackbar/>
     <v-app-bar flat app clipped-left clipped-right color="accent" elevation="1">
       <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-lg-and-up"/>
-      <v-toolbar-title class="text-subtitle-1 font-weight-medium" v-text="$t('Base.ApplicationName')"/>
+      <v-toolbar-title class="text-subtitle-1 font-weight-medium mx-auto" v-text="$t('Base.ApplicationName')"/>
       <v-spacer/>
+      <v-responsive class="hidden-sm-and-down mr-2" max-width="300">
+        <v-text-field
+          flat
+          hide-details
+          single-line
+          rounded
+          :dark="theme !== 'light'"
+          class="text-caption"
+          background-color="secondary"
+          prepend-inner-icon="mdi-magnify"
+          :placeholder="$t('Common.Search')"/>
+      </v-responsive>
       <internationalization/>
       <v-btn icon class="hidden-sm-and-down" target="_blank" :href="github">
         <v-icon>mdi-github</v-icon>
       </v-btn>
-      <v-btn icon @click="switchTheme">
+      <v-btn icon class="hidden-sm-and-down" @click="switchTheme()">
         <v-icon>mdi-invert-colors</v-icon>
       </v-btn>
     </v-app-bar>
@@ -22,7 +34,7 @@
           </v-list-item-avatar>
         </v-list-item>
         <v-list-item v-show="!miniVariant">
-          <v-list-item-content>
+          <v-list-item-content class="py-0">
             <v-list-item-title class="text-center text-body-1 font-weight-medium" v-text="username"/>
             <v-list-item-subtitle class="text-center text-caption" v-text="motto"/>
           </v-list-item-content>
@@ -53,6 +65,8 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+      <template v-slot:append>
+      </template>
     </v-navigation-drawer>
     <v-main>
       <v-card flat class="ma-4" color="accent">
@@ -104,18 +118,11 @@ export default {
       { text: 'Menu.Album', icon: 'mdi-image', path: '/album' },
       { text: 'Menu.Diary', icon: 'mdi-notebook' },
       { text: 'Menu.About', icon: 'mdi-information' }
-    ],
-    content: {
-      title: 'JavaScript 与 TypeScript 的区别',
-      author: 'Joe',
-      tag: 'JavaScript',
-      url: '',
-      updateTime: '2021.02.10'
-    }
+    ]
   }),
   methods: {
     ...mapActions(['showSnackbar']),
-    switchTheme () {
+    switchTheme: function () {
       this.$vuetify.theme.dark = this.theme === 'light'
       this.$vuetify.theme.dark ? document.body.style.backgroundColor = '#191919' : document.body.style.backgroundColor = '#f1f3f4'
       this.$store.dispatch('switchTheme', this.theme === 'light' ? 'dark' : 'light')

@@ -1,11 +1,11 @@
 <template>
-  <v-card flat class="dashboard" height="10000" color="accent">
+  <v-card flat class="dashboard" color="accent">
     <v-row>
       <v-col cols="12">
         <v-card flat>
           <tick/>
           <v-card-title>Siamese Overview</v-card-title>
-          <v-divider class="pa-4"/>
+          <v-divider class="py-4"/>
           <div v-if="chart">
             <apexchart type="line" :options="lineOptions" :series="lineSeries" height="320"/>
           </div>
@@ -151,7 +151,7 @@ export default {
     ...mapActions(['showSnackbar'])
   },
   watch: {
-    theme () {
+    'theme' () {
       this.switchChartsTheme()
     }
   },

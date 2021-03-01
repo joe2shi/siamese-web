@@ -20,7 +20,7 @@ const options = {
         info: '#707070',
         accent: '#f9f9f9',
         secondary: '#f1f3f4',
-        anchor: '#8c9eff'
+        anchor: '#ffffff'
       },
       dark: {
         primary: '#1976D2',
@@ -30,7 +30,7 @@ const options = {
         info: '#707070',
         accent: '#212121',
         secondary: '#191919',
-        anchor: '#8c9eff'
+        anchor: '#252525'
       }
     }
   }

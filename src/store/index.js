@@ -6,29 +6,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    miniSidebar: Cookies.get('miniSidebar') || 'close',
     theme: Cookies.get('theme') || 'light',
     language: Cookies.get('language') || 'zh',
     loading: false,
-    message: '',
-    color: '',
-    icon: ''
+    message: null,
+    color: null,
+    icon: null
   },
   mutations: {
-    SWITCH_MINI_SIDEBAR: (state, miniSidebar) => {
-      state.miniSidebar = miniSidebar
-      Cookies.set('miniSidebar', miniSidebar)
+    SWITCH_THEME: (state, payload) => {
+      state.theme = payload
+      Cookies.set('theme', payload)
     },
-    SWITCH_THEME: (state, theme) => {
-      state.theme = theme
-      Cookies.set('theme', theme)
+    SWITCH_LANGUAGE: (state, payload) => {
+      state.language = payload
+      Cookies.set('language', payload)
     },
-    SWITCH_LANGUAGE: (state, language) => {
-      state.language = language
-      Cookies.set('language', language)
-    },
-    SWITCH_LOADING: (state, loading) => {
-      state.loading = loading
+    SWITCH_LOADING: (state, payload) => {
+      state.loading = payload
     },
     SHOW_SNACKBAR: (state, payload) => {
       switch (payload.color) {
@@ -51,24 +46,20 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    switchMiniSidebar ({ commit }, miniSidebar) {
-      commit('SWITCH_MINI_SIDEBAR', miniSidebar)
+    switchTheme ({ commit }, payload) {
+      commit('SWITCH_THEME', payload)
     },
-    switchTheme ({ commit }, theme) {
-      commit('SWITCH_THEME', theme)
+    switchLanguage ({ commit }, payload) {
+      commit('SWITCH_LANGUAGE', payload)
     },
-    switchLanguage ({ commit }, language) {
-      commit('SWITCH_LANGUAGE', language)
-    },
-    switchLoading ({ commit }, loading) {
-      commit('SWITCH_LOADING', loading)
+    switchLoading ({ commit }, payload) {
+      commit('SWITCH_LOADING', payload)
     },
     showSnackbar ({ commit }, payload) {
       commit('SHOW_SNACKBAR', payload)
     }
   },
   getters: {
-    miniSidebar: state => state.miniSidebar,
     theme: state => state.theme,
     language: state => state.language,
     loading: state => state.loading,

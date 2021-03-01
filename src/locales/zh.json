@@ -11,7 +11,10 @@
     "About": "关于"
   },
   "Common": {
-    "Close": "关闭"
+    "Chinese": "简体中文",
+    "English": "English",
+    "Close": "关闭",
+    "Search": "搜索"
   },
   "Tip": {
     "ConnectTimeout": "连接超时",
