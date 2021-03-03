@@ -5,28 +5,12 @@ import Layout from '../views/layout/Index.vue'
 import SignInLayout from '../views/auth/Index.vue'
 
 Vue.use(VueRouter)
-
 const routes = [
-  {
-    path: '/',
-    name: 'SignInLayout',
-    component: SignInLayout,
-    redirect: '/signin',
-    children: [
-      {
-        path: 'signin',
-        name: 'SignIn',
-        meta: {
-          title: 'SignIn'
-        },
-        component: () => import('../views/auth/SignIn.vue')
-      }
-    ]
-  },
   {
     path: '/',
     name: 'Layout',
     component: Layout,
+    redirect: '/dashboard',
     children: [
       {
         path: 'dashboard',
@@ -34,15 +18,22 @@ const routes = [
         meta: {
           title: 'Dashboard'
         },
-        component: () => import('../views/dashboard/Index.vue')
-      },
+        component: () => import('../views/app/dashboard/Index.vue')
+      }
+    ]
+  },
+  {
+    path: '/',
+    name: 'SignInLayout',
+    component: SignInLayout,
+    children: [
       {
-        path: 'album',
-        name: 'Album',
+        path: 'signin',
+        name: 'SignIn',
         meta: {
-          title: 'Album'
+          title: 'SignIn'
         },
-        component: () => import('../views/album/Index.vue')
+        component: () => import('../views/auth/core/SignIn.vue')
       }
     ]
   }

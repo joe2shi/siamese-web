@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     theme: Cookies.get('theme') || 'light',
     language: Cookies.get('language') || 'zh',
+    drawer: null,
     loading: false,
     message: null,
     color: null,
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     SWITCH_LANGUAGE: (state, payload) => {
       state.language = payload
       Cookies.set('language', payload)
+    },
+    SWITCH_DRAWER: (state, payload) => {
+      state.drawer = payload
     },
     SWITCH_LOADING: (state, payload) => {
       state.loading = payload
@@ -52,6 +56,9 @@ export default new Vuex.Store({
     switchLanguage ({ commit }, payload) {
       commit('SWITCH_LANGUAGE', payload)
     },
+    switchDrawer ({ commit }, payload) {
+      commit('SWITCH_DRAWER', payload)
+    },
     switchLoading ({ commit }, payload) {
       commit('SWITCH_LOADING', payload)
     },
@@ -62,6 +69,7 @@ export default new Vuex.Store({
   getters: {
     theme: state => state.theme,
     language: state => state.language,
+    drawer: state => state.drawer,
     loading: state => state.loading,
     text: state => state.message,
     color: state => state.color,

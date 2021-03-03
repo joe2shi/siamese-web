@@ -33,7 +33,7 @@ export default {
 <style scoped>
   #loading {
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 7;
   }

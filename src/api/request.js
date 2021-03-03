@@ -3,7 +3,7 @@ import axios from 'axios'
 import store from '../store'
 
 const service = axios.create({
-  baseURL: 'http://api.joe2shi.com',
+  baseURL: 'http://api.joe2shi.com/api',
   timeout: 10000
 })
 

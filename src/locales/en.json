@@ -3,12 +3,7 @@
     "ApplicationName": "Siamese Admin"
   },
   "Menu": {
-    "Dashboard": "Dashboard",
-    "Repository": "Repository",
-    "Friends": "Friends",
-    "Album": "Album",
-    "Diary": "Diary",
-    "About": "About"
+    "Dashboard": "Dashboard"
   },
   "Common": {
     "Chinese": "简体中文",

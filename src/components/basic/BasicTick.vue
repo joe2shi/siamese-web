@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Tick'
+  name: 'BasicTick'
 }
 </script>
 
