@@ -3,11 +3,15 @@ import axios from 'axios'
 import store from '../store'
 
 const service = axios.create({
-  baseURL: 'http://api.joe2shi.com/api',
+  baseURL: 'http://api.joe2shi.com',
   timeout: 10000
 })
 
 service.interceptors.request.use(config => {
+  const token = localStorage.token
+  if (token) {
+    config.headers.token = token
+  }
   store.state.loading = true
   return config
 })
