@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Loading from './core/Loading'
-import Snackbar from './core/Snackbar'
+import Loading from '../../components/basic/Loading'
+import Snackbar from '../../components/basic/Snackbar'
 import Breadcrumb from './core/Breadcrumb'
 import NavBar from './core/NavBar'
 import SideBar from './core/SideBar'
@@ -44,13 +44,13 @@ export default {
   }),
   created () {
     this.init()
+    this.sigIn()
   },
   methods: {
     ...mapActions(['showSnackbar', 'switchDrawer']),
     init: function () {
       this.$vuetify.theme.dark = this.theme !== 'light'
       this.switchBackgroundColor()
-      this.sigIn()
     },
     switchBackgroundColor: function () {
       if (this.$vuetify.theme.dark) document.body.style.backgroundColor = '#191919'

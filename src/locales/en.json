@@ -13,6 +13,8 @@
   },
   "Tip": {
     "ConnectTimeout": "Connect Timeout",
-    "Welcome": "Page loaded, welcome to siamese!"
+    "Welcome": "Page loaded, welcome to siamese!",
+    "SwipingRightSide": "Swiping to the right side",
+    "VerifySuccess": "Verify Success"
   }
 }

@@ -136,7 +136,8 @@ export default {
         name: 'Avg',
         data: [150, 127, 100, 89, 95, 80, 64, 65, 50, 30, 12, 1]
       }
-    ]
+    ],
+    verify: false
   }),
   components: { BasicTick },
   mounted () {
