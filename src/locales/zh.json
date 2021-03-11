@@ -3,6 +3,7 @@
     "ApplicationName": "Siamese Admin"
   },
   "Menu": {
+    "SignIn": "登录",
     "Dashboard": "首页"
   },
   "Common": {
@@ -15,6 +16,7 @@
     "ConnectTimeout": "连接超时",
     "Welcome": "页面已加载完毕，欢迎来到 Siamese！",
     "SwipingRightSide": "请按住滑块拖动",
-    "VerifySuccess": "通过验证"
+    "VerifySuccess": "通过验证",
+    "SingInSuccess": "登录成功"
   }
 }

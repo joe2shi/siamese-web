@@ -13,24 +13,24 @@ const options = {
     },
     themes: {
       light: {
-        primary: '#1976D2',
+        primary: '#0096c7',
         success: '#3cd1c2',
         warning: '#ffaa2c',
         error: '#f83e70',
         info: '#707070',
         accent: '#f9f9f9',
         secondary: '#f1f3f4',
-        anchor: '#ffffff'
+        anchor: ''
       },
       dark: {
-        primary: '#1976D2',
+        primary: '#0096c7',
         success: '#3cd1c2',
         warning: '#ffaa2c',
         error: '#f83e70',
         info: '#707070',
         accent: '#212121',
         secondary: '#191919',
-        anchor: '#252525'
+        anchor: ''
       }
     }
   }

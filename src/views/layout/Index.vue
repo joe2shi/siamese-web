@@ -1,6 +1,5 @@
 <template>
   <v-card flat tile class="layout" color="secondary">
-    <snackbar/>
     <nav-bar :github="user.github"/>
     <side-bar :username="user.username" :motto="user.motto" :avatar="user.avatar"/>
     <v-main>
@@ -16,20 +15,18 @@
 
 <script>
 import Loading from '../../components/basic/Loading'
-import Snackbar from '../../components/basic/Snackbar'
 import Breadcrumb from './core/Breadcrumb'
 import NavBar from './core/NavBar'
 import SideBar from './core/SideBar'
 import Directory from './core/Directory'
 import { mapActions, mapState } from 'vuex'
-import { getListAPI, postAPI } from '../../api'
+import { getListAPI } from '../../api'
 
 export default {
   name: 'Layout',
   components: {
     Directory,
     Loading,
-    Snackbar,
     NavBar,
     SideBar,
     Breadcrumb
@@ -43,29 +40,10 @@ export default {
     }
   }),
   created () {
-    this.init()
-    this.sigIn()
+    this.getUserInformation()
   },
   methods: {
-    ...mapActions(['showSnackbar', 'switchDrawer']),
-    init: function () {
-      this.$vuetify.theme.dark = this.theme !== 'light'
-      this.switchBackgroundColor()
-    },
-    switchBackgroundColor: function () {
-      if (this.$vuetify.theme.dark) document.body.style.backgroundColor = '#191919'
-      else document.body.style.backgroundColor = '#f1f3f4'
-    },
-    sigIn: function () {
-      postAPI('/siamese-auth/accredit', { username: 'Joe', password: '19990628sq' })
-        .then(response => {
-          if (response) {
-            localStorage.setItem('token', response.data.data)
-            this.showSnackbar({ message: response.data.message, color: 'success' })
-            this.getUserInformation()
-          }
-        })
-    },
+    ...mapActions(['switchDrawer']),
     getUserInformation: function () {
       getListAPI('/siamese-user-interface/user')
         .then(response => {

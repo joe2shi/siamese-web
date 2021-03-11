@@ -3,6 +3,7 @@
     "ApplicationName": "Siamese Admin"
   },
   "Menu": {
+    "SignIn": "Sign In",
     "Dashboard": "Dashboard"
   },
   "Common": {
@@ -15,6 +16,7 @@
     "ConnectTimeout": "Connect Timeout",
     "Welcome": "Page loaded, welcome to siamese!",
     "SwipingRightSide": "Swiping to the right side",
-    "VerifySuccess": "Verify Success"
+    "VerifySuccess": "Verify Success",
+    "SingInSuccess": "Sing In Success"
   }
 }

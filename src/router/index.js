@@ -7,13 +7,12 @@ import SignInLayout from '../views/auth/Index.vue'
 Vue.use(VueRouter)
 const routes = [
   {
-    path: '/',
+    path: '/dashboard',
     name: 'Layout',
     component: Layout,
-    redirect: '/dashboard',
     children: [
       {
-        path: 'dashboard',
+        path: '/dashboard',
         name: 'Dashboard',
         meta: {
           title: 'Dashboard'
@@ -26,6 +25,7 @@ const routes = [
     path: '/',
     name: 'SignInLayout',
     component: SignInLayout,
+    redirect: '/signin',
     children: [
       {
         path: 'signin',

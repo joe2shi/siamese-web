@@ -1,5 +1,7 @@
 <template>
-  <router-view/>
+  <v-card flat tile min-height="100%">
+    <router-view/>
+  </v-card>
 </template>
 
 <script>
