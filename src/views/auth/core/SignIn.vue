@@ -1,14 +1,33 @@
 <template>
   <v-row class="ma-0">
-    <v-col lg="4" md="6" sm="12" class="mx-auto">
-      <v-card flat class="pa-8 mx-auto mt-6">
+    <v-col xl="3" lg="4" md="5" sm="8" class="mx-auto">
+      <v-card flat class="pa-0 mx-auto mt-6">
         <div class="text-center text-uppercase text-caption text-overline primary--text mb-3">Account</div>
-        <div class="text-h4 font-weight-bold mb-12 text-center">Sign In Siamese</div>
+        <div class="text-h4 font-weight-bold mb-12 text-center">Sign In</div>
         <v-form ref="form" lazy-validation>
           <v-container>
-            <v-text-field prepend-inner-icon="mdi-account-outline" outlined v-model="signInForm.username" placeholder="Username / Phone Number"/>
-            <v-text-field prepend-inner-icon="mdi-lock-outline" type="password" outlined v-model="signInForm.password" placeholder="Password"/>
-            <v-btn elevation="0" x-large block color="primary" class="text-h6 text-none mb-5" @click="signIn" :loading="loading">Sign In</v-btn>
+            <v-text-field
+              prepend-inner-icon="mdi-account-outline"
+              class="text-body-2"
+              dense
+              clearable
+              label="Username / Phone Number"
+              outlined
+              hint="At least 3 characters"
+              v-model="signInForm.username"/>
+            <v-text-field
+              prepend-inner-icon="mdi-lock-outline"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              class="text-body-2"
+              clearable
+              dense
+              label="Password"
+              hint="At least 6 characters"
+              :type="showPassword ? 'text' : 'password'"
+              outlined
+              v-model="signInForm.password"
+              @click:append="showPassword = !showPassword"/>
+            <v-btn elevation="0" large block color="primary" class="text-body-1 text-none mb-5" @click="signIn" :loading="loading">Sign In</v-btn>
             <div class="text-center"><a href="">Forgot your password?</a></div>
             <div class="d-flex my-4">
               <v-divider class="my-4"/>
@@ -43,6 +62,7 @@ export default {
   name: 'SignIn',
   data: () => ({
     loading: false,
+    showPassword: false,
     signInForm: {
       username: '',
       password: ''

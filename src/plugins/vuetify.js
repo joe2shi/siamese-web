@@ -7,7 +7,7 @@ import '../sass/overrides.sass'
 
 const options = {
   theme: {
-    dark: false,
+    dark: true,
     lang: {
       t: (key, ...params) => i18n.t(key, params)
     },

@@ -9,7 +9,6 @@
         hide-details
         single-line
         rounded
-        :dark="theme !== 'light'"
         class="text-caption"
         background-color="secondary"
         prepend-inner-icon="mdi-magnify"
@@ -19,7 +18,7 @@
     <v-btn icon class="hidden-sm-and-down" target="_blank" :href="github">
       <v-icon>mdi-github</v-icon>
     </v-btn>
-    <v-btn icon class="hidden-sm-and-down" @click="changeTheme()">
+    <v-btn icon @click="changeTheme()">
       <v-icon>mdi-invert-colors</v-icon>
     </v-btn>
   </v-app-bar>
