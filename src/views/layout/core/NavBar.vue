@@ -18,33 +18,20 @@
     <v-btn icon class="hidden-sm-and-down" target="_blank" :href="github">
       <v-icon>mdi-github</v-icon>
     </v-btn>
-    <v-btn icon @click="changeTheme()">
-      <v-icon>mdi-invert-colors</v-icon>
-    </v-btn>
+    <theme/>
   </v-app-bar>
 </template>
 
 <script>
-import Internationalization from './Internationalization'
-import { mapActions, mapState } from 'vuex'
+import Internationalization from '../../../components/basic/Internationalization'
+import { mapActions } from 'vuex'
+import Theme from '../../../components/basic/Theme'
 export default {
   name: 'NavBar',
-  components: { Internationalization },
+  components: { Theme, Internationalization },
   props: ['github'],
-  computed: {
-    ...mapState(['theme'])
-  },
   methods: {
-    ...mapActions(['switchTheme', 'switchDrawer']),
-    changeTheme: function () {
-      this.$vuetify.theme.dark = this.theme === 'light'
-      this.switchTheme(this.theme === 'light' ? 'dark' : 'light')
-      this.switchBackgroundColor()
-    },
-    switchBackgroundColor: function () {
-      if (this.$vuetify.theme.dark) document.body.style.backgroundColor = '#191919'
-      else document.body.style.backgroundColor = '#f1f3f4'
-    },
+    ...mapActions(['switchDrawer']),
     showDrawer: function () {
       this.switchDrawer(true)
     }

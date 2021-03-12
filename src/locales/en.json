@@ -13,10 +13,27 @@
     "Search": "Search"
   },
   "Tip": {
-    "ConnectTimeout": "Connect Timeout",
+    "ConnectTimeout": "Connect timeout",
     "Welcome": "Page loaded, welcome to siamese!",
     "SwipingRightSide": "Swiping to the right side",
-    "VerifySuccess": "Verify Success",
-    "SingInSuccess": "Sing In Success"
+    "VerifySuccess": "Verify success",
+    "SingInSuccess": "Sing in success"
+  },
+  "Page": {
+    "SignIn": {
+      "Account": "Account",
+      "SignIn": "Sign In",
+      "SignInSiameseAdmin": "Sign In Siamese Admin",
+      "UsernameOrPhoneNumber": "Username / Phone Number",
+      "Password": "Password",
+      "ForgotPassword": "Forgot your password?",
+      "OrSignInWith": "Or Sign In With",
+      "BySigningInYouAgreeToThe": "By signing in, you agree to the",
+      "TermsOfService": "Terms Of Service",
+      "AndSymbol": "&",
+      "PrivacyPolicy": "Privacy Policy",
+      "UsernameRequiredTip": "Username is required",
+      "PasswordRequiredTip": "Password is required"
+    }
   }
 }

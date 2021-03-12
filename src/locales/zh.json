@@ -18,5 +18,22 @@
     "SwipingRightSide": "请按住滑块拖动",
     "VerifySuccess": "通过验证",
     "SingInSuccess": "登录成功"
+  },
+  "Page": {
+    "SignIn": {
+      "Account": "账户",
+      "SignIn": "登录",
+      "SignInSiameseAdmin": "登录 Siamese 后台管理",
+      "UsernameOrPhoneNumber": "用户名/手机号",
+      "Password": "密码",
+      "ForgotPassword": "忘记密码",
+      "OrSignInWith": "或使用以下方式登录",
+      "BySigningInYouAgreeToThe": "登录即表示您同意",
+      "TermsOfService": "服务条款",
+      "AndSymbol": "&",
+      "PrivacyPolicy": "隐私政策",
+      "UsernameRequiredTip": "用户名为必填项",
+      "PasswordRequiredTip": "密码为必填项"
+    }
   }
 }

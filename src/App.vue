@@ -14,7 +14,6 @@ export default {
   components: { Snackbar },
   created () {
     this.init()
-    this.switchTitle(this.$route.matched)
   },
   watch: {
     '$route.matched' (newValue) {
@@ -27,6 +26,8 @@ export default {
   methods: {
     init: function () {
       this.$vuetify.theme.dark = this.theme !== 'light'
+      this.$i18n.locale = this.language
+      this.switchTitle(this.$route.matched)
       this.switchBackgroundColor()
     },
     switchBackgroundColor: function () {

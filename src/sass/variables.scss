@@ -1,4 +1,8 @@
-$body-font-family: 'Quicksand',"Microsoft Jhenghei","Microsoft Yahei",sans-serif;
-$heading-font-family: 'Quicksand',"Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+@font-face {
+  font-family: 'PingFang';
+  src: url('./font/PingFang.ttf');
+}
+$body-font-family: 'Quicksand','PingFang',sans-serif;
+$heading-font-family: 'Quicksand','PingFang',sans-serif;
 
 @import "~vuetify/src/styles/main";
